@@ -7,6 +7,7 @@
 ## 📖 插件简介
 
 S-XIASQL 是一款专业的 Burp Suite SQL注入检测插件，能够自动化检测Web应用中的SQL注入漏洞。通过智能分析HTTP请求响应，快速识别潜在的SQL注入点，大幅提升渗透测试效率。
+![Image text](https://github.com/qazwsx5293870/S-XIASQL/blob/main/S-XIASQL%20V1.0.png)
 
 ## ✨ 核心功能
 
@@ -137,5 +138,6 @@ S-XIASQL 是一款专业的 Burp Suite SQL注入检测插件，能够自动化�
 - 微信：AMidnightCafe
 
 ---
+
 
 **致敬原作者算命缭子，感谢开源精神！**
