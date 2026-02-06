@@ -1,4 +1,4 @@
-# S-XIASQL V1.0 - Burp Suite SQL注入检测插件
+# S-XIASQL V1.1 - Burp Suite SQL注入检测插件
 
 > 致敬原作者：瞎注 (author: 算命瞎子 blog:www.nmd5.com)
 > 
@@ -145,6 +145,7 @@ S-XIASQL 是一款专业的 Burp Suite SQL注入检测插件，能够自动化�
 
 
 **致敬原作者算命缭子，感谢开源精神！**
+
 
 
 
